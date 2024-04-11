@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "f4cf",
+      "userName": "sai",
+      "email": "sai@sai.com",
+      "userPassword": "sai"
+    },
+    {
+      "id": "9e08",
+      "userName": "redhat",
+      "email": "redhat@redhat.com",
+      "userPassword": "redhat"
+    },
+    {
+      "id": "c411",
+      "userName": "user",
+      "email": "user@user",
+      "userPassword": "user"
+    },
+    {
+      "id": "2a43",
+      "userName": "ram",
+      "email": "ram@ram.com",
+      "userPassword": "ram"
+    },
+    {
+      "id": "d933",
+      "userName": "falcon",
+      "email": "falcon@falcon.com",
+      "userPassword": "falcon"
+    },
+    {
+      "id": "ef32",
+      "userName": "high",
+      "email": "high@high.com",
+      "userPassword": "high"
+    }
+  ]
+}

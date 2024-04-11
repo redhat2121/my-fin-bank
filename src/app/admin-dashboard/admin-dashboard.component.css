@@ -1,0 +1,35 @@
+
+.btn-custom {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background-color: #eb0101;
+  }
+  
+  .btn-custom span {
+    display: block;
+  }
+  
+  .bar-anchor {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .bar-anchor:hover {
+    text-decoration: none;
+  }
+  
+  .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+  

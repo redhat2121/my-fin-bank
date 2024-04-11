@@ -1,0 +1,14 @@
+.hover-info::after {
+    content: attr(data-info);
+    position: absolute;
+    background-color: white;
+    padding: 2px 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 1;
+    display: none;
+}
+
+.hover-info:hover::after {
+    display: inline-block;
+}
