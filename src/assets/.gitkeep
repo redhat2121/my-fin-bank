@@ -1,0 +1,9 @@
+{
+  "glob": "**/*",
+  "input": "src/assets/",
+  "output": "./assets/",
+  "allowOverwriting": true,
+  "ignore": [
+    "**/.gitkeep"
+  ]
+}

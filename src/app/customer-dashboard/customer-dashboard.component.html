@@ -1,0 +1,43 @@
+<div *ngIf="successMsg.title || successMsg.msg" class="alert alert-success mt-3" role="alert">
+    <b>{{ successMsg.title }}</b>: {{ successMsg.msg }}
+  </div>
+<div class="container">
+  <form (ngSubmit)="deposit()" #depositForm="ngForm" class="mb-3">
+      <label for="depositAmount" class="form-label">Deposit Amount</label>
+      <input type="number" id="depositAmount" name="amount" [(ngModel)]="depositAmount" required class="form-control">
+      <button type="submit" class="btn btn-primary mt-2">Deposit</button>
+  </form>
+  <form (ngSubmit)="withdraw()" #withdrawForm="ngForm" class="mb-3">
+      <label for="withdrawAmount" class="form-label">Withdraw Amount</label>
+      <input type="number" id="withdrawAmount" name="amount" [(ngModel)]="withdrawAmount" required class="form-control">
+      <button type="submit" class="btn btn-primary mt-2">Withdraw</button>
+  </form>
+  <form (ngSubmit)="transferFunds()" #transferForm="ngForm" class="mb-3">
+      <label for="transferAmount" class="form-label">Transfer Amount</label>
+      <input type="number" id="transferAmount" name="amount" [(ngModel)]="transferAmount" required class="form-control">
+      <label for="recipientAccount" class="form-label mt-2">Recipient Account</label>
+      <input type="text" id="recipientAccount" name="recipient" [(ngModel)]="recipientAccount" required class="form-control">
+      <button type="submit" class="btn btn-primary mt-2">Transfer</button>
+  </form>
+
+  <div class="mb-3">
+      <input type="text" id="transactionID" name="transactionID" [value]="transactionID" readonly class="form-control">
+      <button (click)="generateTransactionID()" class="btn btn-primary mt-2">Generate Transaction ID</button>
+  </div>
+  <div class="mb-3">
+      <button (click)="transferToLoan()" class="btn btn-primary me-2">Transfer to Loan</button>
+      <button (click)="transferToRecurringDeposit()" class="btn btn-primary me-2">Transfer to Recurring Deposit</button>
+      <button (click)="transferToFixedDeposit()" class="btn btn-primary">Transfer to Fixed Deposit</button>
+  </div>
+  <div class="chat-section border rounded p-3 mb-3">
+      <div *ngFor="let message1 of chatMessages">
+          <p>{{ message1 }}</p>
+      </div>
+      <div class="input-group mt-3">
+          <input type="text" [(ngModel)]="chatMessage" class="form-control">
+          <button (click)="sendMessage()" class="btn btn-primary">Send</button>
+      </div>
+  </div>
+
+  <button (click)="logout()" class="btn btn-danger">Logout</button>
+</div>
