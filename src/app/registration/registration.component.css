@@ -6,6 +6,7 @@
 .snackbar-error {
   background-color: red;
   color: white;
+<<<<<<< HEAD
 }
 
 
@@ -22,3 +23,6 @@
 .error-message {
   color: red;
 }
+=======
+}
+>>>>>>> origin/master
