@@ -11,33 +11,39 @@ interface User {
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.css']
+  styleUrls: ['./customers.component.css'],
 })
 export class CustomersComponent implements OnInit {
   customers: User[] = [];
   newCustomer: User = { id: '', userName: '', email: '', userPassword: '' };
   selectedCustomerIndex: number = -1;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.fetchUsers();
   }
 
   fetchUsers() {
-    this.http.get<{ users: User[] }>('assets/users.json')
-      .subscribe(data => {
-        this.customers = data.users;
-        console.log('Fetched Users:', data.users);
-      });
+    this.http.get<{ users: User[] }>('assets/users.json').subscribe((data) => {
+      this.customers = data.users;
+      console.log('Fetched Users:', data.users);
+    });
   }
 
   addCustomer() {
-    if (this.newCustomer.userName.trim() !== '' && this.newCustomer.email.trim() !== '' && this.newCustomer.userPassword.trim() !== '') {
+    if (
+      this.newCustomer.userName.trim() !== '' &&
+      this.newCustomer.email.trim() !== '' &&
+      this.newCustomer.userPassword.trim() !== ''
+    ) {
       this.customers.push({ ...this.newCustomer }); // Add new customer to the array
 
-      this.http.post<{ message: string }>('assets/users.json', { users: this.customers })
-        .subscribe(response => {
+      this.http
+        .post<{ message: string }>('assets/users.json', {
+          users: this.customers,
+        })
+        .subscribe((response) => {
           console.log(response.message);
         });
 
@@ -58,8 +64,11 @@ export class CustomersComponent implements OnInit {
       this.customers.splice(index, 1); // Remove the customer at the specified index
 
       // Update users.json file after deleting the customer
-      this.http.put<{ message: string }>('assets/users.json', { users: this.customers })
-        .subscribe(response => {
+      this.http
+        .put<{ message: string }>('assets/users.json', {
+          users: this.customers,
+        })
+        .subscribe((response) => {
           console.log(response.message);
         });
     }

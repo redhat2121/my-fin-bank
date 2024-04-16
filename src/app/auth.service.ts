@@ -18,8 +18,8 @@ export class AuthService {
   isAuthenticatedUser(): boolean {
     return this.isAuthenticated;
   }
- //Admin function
-  constructor(private router: Router, private http:HttpClient) {}
+  //Admin function
+  constructor(private router: Router, private http: HttpClient) {}
   login(username: string, password: string): boolean {
     if (username === 'admin' && password === 'admin123') {
       this.isAdminLoggedIn = true;

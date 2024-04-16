@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BankService {
   private apiUrl = 'http://localhost:8080/api'; // Backend API URL please make sure you run "server.js" file to work properly
@@ -27,7 +27,9 @@ export class BankService {
   }
 
   transferToRecurringDeposit(amount: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/transfer-recurring-deposit`, { amount });
+    return this.http.post(`${this.apiUrl}/transfer-recurring-deposit`, {
+      amount,
+    });
   }
 
   transferToFixedDeposit(amount: number): Observable<any> {
@@ -40,7 +42,7 @@ export class BankService {
 
   // Print function that formats messages in separate boxes
   print(messages: any[]): void {
-    messages.forEach(msg => {
+    messages.forEach((msg) => {
       console.log('---------------------------------');
       console.log(`Type: ${msg.type}`);
       console.log(`Content: ${msg.content}`);

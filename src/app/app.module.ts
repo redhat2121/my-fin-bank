@@ -1,5 +1,8 @@
 import { NgModule, Renderer2 } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -15,7 +18,6 @@ import { EmailNotificationsComponent } from './admin/email-notifications/email-n
 import { ChatComponent } from './admin/chat/chat.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-;
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EmailNotificationsComponent,
     ChatComponent,
     RegistrationComponent,
-
   ],
-
 
   imports: [
     BrowserModule,
@@ -39,13 +39,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
-    
-
+    BrowserAnimationsModule,
   ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideClientHydration()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

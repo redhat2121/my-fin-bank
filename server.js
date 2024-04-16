@@ -1,24 +1,21 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-<<<<<<< HEAD
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-=======
->>>>>>> origin/master
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const app = express();
 const port = process.env.PORT || 8080;
 
-<<<<<<< HEAD
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/MyFinBank', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error('MongoDB connection error:', err));
+mongoose
+  .connect("mongodb://localhost:27017/MyFinBank", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 // Import User model
 /* const User = require('./models/User');
@@ -87,65 +84,43 @@ app.post('/api/login', async (req, res) => {
 });
 */
 // Banking Operations
-app.post('/api/deposit', async (req, res) => {
-  res.send({ messages: [{ type: 'info', content: 'Deposit successful' }] });
+app.post("/api/deposit", async (req, res) => {
+  res.send({ messages: [{ type: "info", content: "Deposit successful" }] });
 });
 
-app.post('/api/withdraw', async (req, res) => {
-  res.send({ messages: [{ type: 'success', content: 'Withdraw successful' }] });
+app.post("/api/withdraw", async (req, res) => {
+  res.send({ messages: [{ type: "success", content: "Withdraw successful" }] });
 });
 
-app.post('/api/transfer', async (req, res) => {
-  res.send({ messages: [{ type: 'success', content: 'Funds transferred successfully' }] });
+app.post("/api/transfer", async (req, res) => {
+  res.send({
+    messages: [{ type: "success", content: "Funds transferred successfully" }],
+  });
 });
 
-app.post('/api/transfer-loan', async (req, res) => {
-  res.send({ messages: [{ type: 'success', content: 'Transfer to loan successful' }] });
+app.post("/api/transfer-loan", async (req, res) => {
+  res.send({
+    messages: [{ type: "success", content: "Transfer to loan successful" }],
+  });
 });
 
-app.post('/api/transfer-recurring-deposit', async (req, res) => {
-  res.send({ messages: [{ type: 'success', content: 'Transfer to recurring deposit successful' }] });
+app.post("/api/transfer-recurring-deposit", async (req, res) => {
+  res.send({
+    messages: [
+      { type: "success", content: "Transfer to recurring deposit successful" },
+    ],
+  });
 });
 
-app.post('/api/transfer-fixed-deposit', async (req, res) => {
-  res.send({ messages: [{ type: 'success', content: 'Transfer to fixed deposit successful' }] });
-=======
-app.use(cors());
-app.use(bodyParser.json());
-
-app.post('/api/deposit', (req, res) => {
-  const amount = req.body.amount;
-  res.send({ messages: [{ type: 'info', content: 'Deposit successful' }], amount });
-});
-app.post('/api/withdraw', (req, res) => {
-  const amount = req.body.amount;
-  res.send({ messages: [{ type: 'success', content: 'Withdraw successful' }], amount });
-});
-
-app.post('/api/transfer', (req, res) => {
-  const amount = req.body.amount;
-  const recipient = req.body.recipient;
-  res.send({ messages: [{ type: 'success', content: 'Funds transferred successfully' }], amount, recipient });
-});
-
-
-app.post('/api/transfer-loan', (req, res) => {
-  const amount = req.body.amount;
-  res.send({ messages: [{ type: 'success', content: 'Transfer to loan successful' }], amount });
-});
-
-app.post('/api/transfer-recurring-deposit', (req, res) => {
-  const amount = req.body.amount;
-  res.send({ messages: [{ type: 'success', content: 'Transfer to recurring deposit successful' }], amount });
-});
-
-app.post('/api/transfer-fixed-deposit', (req, res) => {
-  const amount = req.body.amount;
-  res.send({ messages: [{ type: 'success', content: 'Transfer to fixed deposit successful' }], amount });
->>>>>>> origin/master
+app.post("/api/transfer-fixed-deposit", async (req, res) => {
+  res.send({
+    messages: [
+      { type: "success", content: "Transfer to fixed deposit successful" },
+    ],
+  });
 });
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
-  console.log("Press  Ctrl+C to quit.")
+  console.log("Press  Ctrl+C to quit.");
 });

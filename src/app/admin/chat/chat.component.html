@@ -1,18 +1,15 @@
 <div class="card">
-    <div class="card-header">
-      Chat
+  <div class="card-header">Chat</div>
+  <div class="card-body">
+    <div class="chat-messages">
+      <!-- Chat messages will appear here -->
     </div>
-    <div class="card-body">
-      <div class="chat-messages">
-        <!-- Chat messages will appear here -->
+    <form id="chat-form">
+      <div class="mb-3">
+        <label for="message" class="form-label">Message:</label>
+        <input type="text" class="form-control" id="message" required />
       </div>
-      <form id="chat-form">
-        <div class="mb-3">
-          <label for="message" class="form-label">Message:</label>
-          <input type="text" class="form-control" id="message" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Send</button>
-      </form>
-    </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
   </div>
-  
+</div>

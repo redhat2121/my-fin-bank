@@ -1,18 +1,50 @@
 <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 sidebar">
-        <ul class="list-unstyled">
-          <li><button class="bar-anchor btn btn-custom" routerLink="/admin/customers"><span>Customers</span></button></li> <br>
-          <li><button class="bar-anchor btn btn-custom" routerLink="/admin/accounts"><span>Customer Accounts</span></button></li> <br>
-          <li><button class="bar-anchor btn btn-custom" routerLink="/admin/email-notifications"><span>Email Notifications</span></button></li> <br>
-          <li><button class="bar-anchor btn btn-custom" routerLink="/admin/chat"><span>Chat</span></button></li> <br>
-          <li><button class="bar-anchor btn btn-primary" (click)="logout()">Logout</button></li>
-        </ul>
-      </div>
-      <div class="col-md-9 main-content">
-        <!-- display child components -->
-        <router-outlet></router-outlet>
-      </div>
+  <div class="row">
+    <div class="col-md-3 sidebar">
+      <ul class="list-unstyled">
+        <li>
+          <button
+            class="bar-anchor btn btn-custom"
+            routerLink="/admin/customers"
+          >
+            <span>Customers</span>
+          </button>
+        </li>
+        <br />
+        <li>
+          <button
+            class="bar-anchor btn btn-custom"
+            routerLink="/admin/accounts"
+          >
+            <span>Customer Accounts</span>
+          </button>
+        </li>
+        <br />
+        <li>
+          <button
+            class="bar-anchor btn btn-custom"
+            routerLink="/admin/email-notifications"
+          >
+            <span>Email Notifications</span>
+          </button>
+        </li>
+        <br />
+        <li>
+          <button class="bar-anchor btn btn-custom" routerLink="/admin/chat">
+            <span>Chat</span>
+          </button>
+        </li>
+        <br />
+        <li>
+          <button class="bar-anchor btn btn-primary" (click)="logout()">
+            Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9 main-content">
+      <!-- display child components -->
+      <router-outlet></router-outlet>
     </div>
   </div>
-  
+</div>
